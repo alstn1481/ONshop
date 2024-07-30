@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+* {margin:0; padding:0; box-sizing: border-box;}
+
+#layout {
+    max-width: 1200px; margin: auto;
+    height: 700px;
+}
+
+h1 {
+    display: none;
+}
+
+header {
+    height: 100px;
+    display: flex; padding-top: 20px;
+}
+
+
+
+
+
+
+
+/* 상단 로고 */
+header>a {
+    margin-left: 2%; /* 강사님 20px */
+}
+
+header ul {
+    flex: 1; z-index: 1; /* header가 flex되어 있어서 z-index가 적용 가능함 */
+    display: flex; list-style: none;
+    margin-left: 15%; /* 강사님 200px */
+}
+
+
+
+
+
+
+
+
+
+/* 메인메뉴 + 서브메뉴 링크텍스트 */
+header ul li {
+    flex: 1;
+}
+
+header ul a {
+    display: block; text-decoration: none;
+    color: black; text-align: center;
+    line-height: 200%; font-weight: bold; 
+}
+
+/* 메인메뉴 */
+.mainMenu {
+    padding: 3%; /* 강사님 10px */
+    font-size: 1.2rem;
+
+}
+
+.mainMenu:hover {
+    background-color: #350a28;
+    color: white;
+}
+
+/* 서브메뉴 */
+.subMenu {
+    background-color: white;
+    height: 0px; overflow: hidden; transition: all 0.7s;
+}
+.subMenu a {
+    color: #4b7b3d;
+}
+.subMenu a:hover {
+    background-color: #4b7b3d; color: white;
+}
+
+/* 각 메인메뉴에 마우스를 대면 각 서브메뉴가 내려온다 */
+/* .mainMenu:hover + .subMenu {
+    height: 150px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+} */
+
+/* 메인메뉴 전체 영역에 마우스를 대면 서브메뉴가 내려온다 */
+header ul:hover .subMenu {
+    height: 150px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 3% 0; /* 강사님 10px */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 위쪽 방향으로 이동하는 슬라이드 */
+#slideArea {
+    height: 300px;
+    overflow: hidden;
+}
+
+#slide {
+    position: relative; top: 0;
+    height: 900px;
+}
+
+#slide section {
+    position: relative; height: 300px;
+}
+
+#slide h2 {
+    position: absolute; top: 35%; width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* 가독성을 위해 투명도 0.75밑으로 내려가면 안됨 */
+    text-align: center; padding: 30px;
+
+}
+
+#slide img {
+    height: 100%; width: 100%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+/* (공지사항 + 갤러리) + 배너 + 바로가기 */
+main {
+    height: 200px; display: flex;
+    padding-top: 10px;
+}
+
+main a {
+    text-decoration: none; color: black;
+}
+
+main img {
+    display: block; max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* (공지사항 + 갤러리) */
+#notigall {
+    flex: 1.2;
+    margin-right: 50px; /* 강사님 70px */
+    position: relative;
+}
+
+#notigall h2 {
+    display: inline-block;
+    font-size: 1.05rem;
+    border: 1px solid #999;
+    border-bottom: 0;
+    background-color: #ddd;
+    padding: 2px 10px 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative; z-index: 1;
+}
+
+#notigall h2.hit {
+    background-color: white;
+}
+
+
+/* 공지사항 */
+#notice ol{
+    list-style: none; line-height: 180%;
+    border: 1px solid #999;
+    padding: 10px; height: 150px;
+}
+
+#notice span{
+    float: right;
+}
+
+#notice li a:hover {
+    text-decoration: underline; color: #4b7b3d;
+}
+
+
+
+/* 갤러리 */
+#gallery {
+    position: absolute; top: 0;
+    width: 100%;
+}
+
+#gallery h2 {
+    margin-left: 90px;
+}
+
+#gallery div {
+    display: flex; justify-content: center;
+    display: none; border: 1px solid #999;
+    justify-content: space-around; height: 150px;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 배너 */
+#banner {
+    flex: 1;
+    margin-right: 50px; /* 강사님 70px */
+    overflow: hidden;
+    height: 176px;
+    position: relative;
+}
+
+#banner img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#banner h2 {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 20% 10%;
+    width: 80%;
+    text-align: center;
+    padding: 2px 0;
+}
+
+
+
+
+
+
+
+
+/* 바로가기 */
+#quick {
+    flex: 1;
+    overflow: hidden;
+    height: 176px;
+    position: relative;
+}
+
+#quick img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#quick h2 {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 20% 10%;
+    width: 80%;
+    text-align: center;
+    padding: 2px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* 하단 */
+footer {
+    height: 100px; background-color: #64154c;
+    display: flex; align-items: center;
+}
+
+footer a {
+    flex: 2;
+}
+
+footer a img {
+    padding-left: 30px;
+}
+
+footer p {
+    flex: 3; color: white;
+    font-size: 1.1rem;
+}
+
+footer div {
+    flex: 1; display: flex;
+    /* padding-right: 10px; */
+    margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 팝업 */
+#black {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed; top: 0; width: 100%;
+    height: 100vh; z-index: -1;
+    opacity: 0;
+}
+
+#black.show {
+    z-index: 1; opacity: 1;
+    transition: all 0.5s;
+}
+
+#popup {
+    background-color: white;
+    width: 600px; padding: 50px 50px 100px;
+    margin-top: 20vh; margin-left: calc( (100% - 600px) / 2); /* 연산자 앞뒤로 띄어씌기 있어야함 */
+    border-radius: 20px; box-shadow: 0 0 10px black;
+    line-height: 180%;
+}
+
+#popup h3 {
+    padding-bottom: 15px;
+}
+#popup button {
+    float: right; margin-top: 20px;
+    padding: 7px 10px 8px; border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
